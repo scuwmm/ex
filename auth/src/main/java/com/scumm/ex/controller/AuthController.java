@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class DeptController {
+public class AuthController {
 
     @Value("${server.port}")
     private String port;
@@ -15,4 +15,11 @@ public class DeptController {
     public String getPayment(@PathVariable("id") Integer id) {
         return "port=" + port + ", id=" + id;
     }
+
+    @GetMapping(value = "/auth/a")
+    public String getPort() {
+        return port;
+    }
+
+
 }
